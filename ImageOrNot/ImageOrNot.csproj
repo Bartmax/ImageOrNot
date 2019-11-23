@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <OutputType>WinExe</OutputType>
+  </PropertyGroup>
+ 
+  <ItemGroup>
+    <PackageReference Include="WebWindow.Blazor" Version="0.1.0-20191120.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="wwwroot\**">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+
+</Project>

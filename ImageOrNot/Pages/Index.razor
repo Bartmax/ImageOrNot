@@ -1,0 +1,34 @@
+﻿@page "/"
+@using  ImageOrNot.ViewModels
+@inject IndexViewModel model
+
+<div>
+    <button @onkeyup="@Save">click here</button>
+    <div>
+        @if (model != null)
+        {
+            <img src="@model.Current" />
+        }
+    </div>
+</div>
+
+@code  {
+
+    public async Task Save(KeyboardEventArgs args)
+    {
+
+        var key = args.Key;
+
+        if (key == ".")
+        {
+            model.Undo();
+        }
+        else
+        {
+            await model.Save(key);
+        }
+
+        StateHasChanged();
+
+    }
+}
